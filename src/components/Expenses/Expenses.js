@@ -5,18 +5,19 @@ import './Expenses.css';
 import ExpenseFilter from './ExpenseFilter';
 
 const Expenses = ({ expenses }) => {
-  const [filteredYear, setFilteredYear] = useState('');
+  const [filteredYear, setFilteredYear] = useState('2022');
 
   const updateYearFilter = (selectedYear) => {
     setFilteredYear(selectedYear);
-    console.log('In Expenses.js');
-    console.log(filteredYear);
   };
 
   return (
     <div>
-      <ExpenseFilter onChangeFilter={updateYearFilter} />
       <Card className='expenses'>
+        <ExpenseFilter
+          filteredYear={filteredYear}
+          onChangeFilter={updateYearFilter}
+        />
         {expenses.map((item) => (
           <ExpenseItem
             key={item.id}

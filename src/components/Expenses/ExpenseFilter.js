@@ -1,7 +1,7 @@
 import React from 'react';
 import './ExpenseFilter.css';
 
-const ExpenseFilter = ({ onChangeFilter }) => {
+const ExpenseFilter = ({ onChangeFilter, filteredYear }) => {
   const yearOptions = ['2022', '2021', '2020', '2019'];
 
   const filterChangeHandler = (e) => {
@@ -12,7 +12,9 @@ const ExpenseFilter = ({ onChangeFilter }) => {
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
-        <select onChange={filterChangeHandler}>
+        <select
+          value={filteredYear}
+          onChange={filterChangeHandler}>
           {yearOptions.map((year, index) => (
             <option
               key={`${year}: ${index}`}
