@@ -7,11 +7,11 @@ import ExpensesList from './ExpensesList';
 const Expenses = ({ expenses }) => {
   const [filteredYear, setFilteredYear] = useState('2022');
 
-  const updateYearFilter = (selectedYear) => {
+  const updateYearFilter = selectedYear => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredExpenses = expenses.filter((item) => item.date.getFullYear() === +filteredYear);
+  const filteredExpenses = expenses.filter(item => item.date.getFullYear() === +filteredYear);
 
   return (
     <div>
