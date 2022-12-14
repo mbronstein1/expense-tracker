@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
+//TODO: add localStorage functionality so data persists after refresh
+
 function App() {
   const [expenses, setExpenses] = useState([
     {
