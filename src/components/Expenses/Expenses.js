@@ -18,12 +18,15 @@ const Expenses = ({ expenses }) => {
           filteredYear={filteredYear}
           onChangeFilter={updateYearFilter}
         />
-        {expenses.map((item) => (
-          <ExpenseItem
-            key={item.id}
-            item={item}
-          />
-        ))}
+        {expenses.map(
+          (item) =>
+            item.date.getFullYear() === +filteredYear && (
+              <ExpenseItem
+                key={item.id}
+                item={item}
+              />
+            )
+        )}
       </Card>
     </div>
   );
