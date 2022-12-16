@@ -5,14 +5,14 @@ import ExpenseFilter from './ExpenseFilter';
 import ExpensesList from './ExpensesList';
 import ExpensesChart from './ExpensesChart';
 
-const Expenses = ({ expenses }) => {
+const Expenses = ({ expenses, onDeleteExpense }) => {
   const [filteredYear, setFilteredYear] = useState('2022');
 
   const updateYearFilter = selectedYear => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredExpenses = expenses.filter(item => item.date.getFullYear() === +filteredYear);
+  const filteredExpenses = expenses.filter(item => item.date_year === +filteredYear);
 
   return (
     <div>
@@ -22,7 +22,10 @@ const Expenses = ({ expenses }) => {
           onChangeFilter={updateYearFilter}
         />
         <ExpensesChart filteredExpenses={filteredExpenses} />
-        <ExpensesList filteredExpenses={filteredExpenses} />
+        <ExpensesList
+          filteredExpenses={filteredExpenses}
+          onDeleteExpense={onDeleteExpense}
+        />
       </Card>
     </div>
   );

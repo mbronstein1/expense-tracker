@@ -1,16 +1,12 @@
 import React from 'react';
 import './ExpenseDate.css';
 
-const ExpenseDate = ({ date }) => {
-  const month = date.toLocaleString('en-US', { month: 'short' });
-  const day = date.toLocaleString('en-US', { day: '2-digit' });
-  const year = date.getFullYear();
-
+const ExpenseDate = ({ date_month, date_day, date_year }) => {
   return (
     <div className='expense-date'>
-      <div className='expense-date__month'>{month}</div>
-      <div className='expense-date__year'>{year}</div>
-      <div className='expense-date__day'>{day}</div>
+      <div className='expense-date__month'>{date_month}</div>
+      <div className='expense-date__year'>{date_year}</div>
+      <div className='expense-date__day'>{date_day}</div>
     </div>
   );
 };

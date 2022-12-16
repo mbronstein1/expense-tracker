@@ -18,7 +18,8 @@ const ExpensesChart = ({ filteredExpenses }) => {
   ];
 
   for (let expense of filteredExpenses) {
-    const expenseMonth = expense.date.getMonth();
+    const expenseMonth = new Date(Date.parse(expense.date_month + ' 1, 2012')).getMonth();
+    // console.log(expenseMonth);
     chartDataPoints[expenseMonth].value += expense.amount;
   }
 

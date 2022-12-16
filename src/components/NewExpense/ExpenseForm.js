@@ -20,7 +20,13 @@ const ExpenseForm = ({ onSaveExpenseData, setShowForm }) => {
 
   const submitHandler = e => {
     e.preventDefault();
-    onSaveExpenseData({ ...expenseData, amount: +expenseData.amount, date: new Date(expenseData.date) });
+    onSaveExpenseData({
+      ...expenseData,
+      amount: +expenseData.amount,
+      date_month: new Date(expenseData.date).toLocaleDateString('en-US', { month: 'short' }),
+      date_day: new Date(expenseData.date).toLocaleDateString('en-US', { day: '2-digit' }),
+      date_year: new Date(expenseData.date).getFullYear(),
+    });
     setShowForm(false);
     setExpenseData({ title: '', amount: '', date: '' });
   };
