@@ -2,7 +2,7 @@ import React from 'react';
 import './ExpenseFilter.css';
 
 const ExpenseFilter = ({ onChangeFilter, filteredYear }) => {
-  const yearOptions = ['2022', '2021', '2020', '2019'];
+  const yearOptions = ['2023', '2022', '2021', '2020', '2019'];
 
   const filterChangeHandler = e => {
     onChangeFilter(e.target.value);
