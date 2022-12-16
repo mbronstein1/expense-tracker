@@ -9,7 +9,6 @@ const ExpenseForm = ({ onSaveExpenseData, setShowForm }) => {
   const changeHandler = e => {
     const { name, value } = e.target;
 
-    // More correct to pass previous state in callback function and call spread of previous state
     setExpenseData(prevState => {
       return {
         ...prevState,
